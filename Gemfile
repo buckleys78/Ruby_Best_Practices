@@ -15,6 +15,7 @@ gem 'sdoc', '~> 0.4.0',          group: :doc   # bundle exec rake doc:rails gene
 
 gem 'spring',    group: :development      # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
 gem "minitest-rails"
+gem 'foundation-rails'
 
 group :test do
   gem "minitest-rails-capybara"
