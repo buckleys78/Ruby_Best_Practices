@@ -7,7 +7,7 @@ feature "Creating A Post" do
     fill_in "Title", with: "Code Rails"
     fill_in "Body",  with: "This is how I learned to make Rails apps."
     # When I submit form
-    click_on "Create Posts"
+    click_on "Create Post"
     #Then a new post should be created and displayed
     page.text.must_include "Post was successfully created"
     page.text.must_include "how I learned to make Rails apps"
