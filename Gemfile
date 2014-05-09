@@ -17,7 +17,7 @@ gem "minitest-rails"
 gem 'foundation-rails'
 
 group :development do
-  gem 'pg'
+  gem 'sqlite3'
 end
 
 group :test do
