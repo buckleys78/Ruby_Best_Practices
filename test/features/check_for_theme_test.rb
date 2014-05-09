@@ -8,6 +8,6 @@ feature "Check For Theme" do
     visit root_path
 
     #Then a stylesheet from the Theme file set is found.
-    page.html.must_include "foundation.mincss"
+    page.html.must_include "foundation.min.css"
   end
 end
