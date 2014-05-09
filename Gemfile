@@ -17,17 +17,17 @@ gem "minitest-rails"
 gem 'foundation-rails'
 
 group :development do
-  gem 'sqlite3'
+  gem 'pg'
 end
 
 group :test do
-  gem "minitest-rails-capybara"
-  gem "launchy"
+  gem 'minitest-rails-capybara'
+  gem 'launchy'
 end
 
 group :production do
-  gem "rails_12factor"
-  gem "pg"
+  gem 'rails_12factor'
+  gem 'pg'
 end
 
 
