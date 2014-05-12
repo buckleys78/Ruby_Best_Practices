@@ -6,7 +6,7 @@ feature "Creating A Project" do
     visit projects_path
 
     # when I fill in the form
-    click_on "New Project" #locator (String) — Text, id or value of link or button
+    click_on "New project" #locator (String) — Text, id or value of link or button
     fill_in "Name", with: "Code Fellows Portfolio"
     fill_in "Technologies used", with: "Rails, Ruby, Zurb, HTML5, CSS3"
     click_on "Create Project"

@@ -1,6 +1,6 @@
 class ProjectsController < ApplicationController
   def index
-    @project = Project.all
+    @projects = Project.all
   end
 
   def new
@@ -14,7 +14,7 @@ class ProjectsController < ApplicationController
       redirect_to @project
     else
       # todo
-    end if
+    end
   end
 
   def show
