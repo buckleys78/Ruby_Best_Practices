@@ -16,4 +16,21 @@ feature "Creating A Project" do
     page.text.must_include "Code Fellows Portfolio"
     page.text.must_include "Rails"
   end
+
+  scenario "Invalid/incompete form submission" do
+    #given that the form data is invalid,
+    visit new_project_path
+    fill_in "Name", with: ""
+    fill_in "Technologies used", with:""
+
+    #when the form is submitted
+    click_on "Create Project"
+
+    #then the user is redirected back to the page
+    current_path.must_match /projects$/   #= /projects/5
+    # and an alert is given.
+    page.text.must_include "Project could not be saved"
+    page.text.must_include "Name is too short"
+    page.text.must_include "Technologies used can't be blank"
+  end
 end

@@ -8,17 +8,18 @@ class ProjectsController < ApplicationController
   end
 
   def create
-    @project = Project.new(params[:project])
+    @project = Project.new(project_params)
     if @project.save
       flash[:notice] = "Project has been created."
       redirect_to @project
     else
-      # todo
+      flash.now[:error] =  "Project could not be saved."
+      render :new
     end
   end
 
   def show
-    @project = Project.find(project_params[:id])
+    @project = Project.find(params[:id])
   end
 
   private
