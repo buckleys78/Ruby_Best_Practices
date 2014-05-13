@@ -3,8 +3,6 @@ require "test_helper"
 feature "Deleting A Post" do
   scenario "clicking delete removes the record" do
     # Given an existing post
-    #post = Post.create(title: "Becoming a Code Fellow",
-     #                               body: "Means striving for excellence.")
     post = posts(:cr)
     visit posts_path
 

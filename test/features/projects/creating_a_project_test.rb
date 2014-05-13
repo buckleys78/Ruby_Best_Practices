@@ -20,7 +20,7 @@ feature "Creating A Project" do
   scenario "Invalid/incompete form submission" do
     #given that the form data is invalid,
     visit new_project_path
-    fill_in "Name", with: ""
+    fill_in "Name", with: "A"
     fill_in "Technologies used", with:""
 
     #when the form is submitted
