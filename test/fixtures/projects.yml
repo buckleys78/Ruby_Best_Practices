@@ -5,3 +5,11 @@ project_before_edit:
 project_after_edit:
   name: Project2
   technologies_used: Ruby_on_Rails_v4
+
+portfolio:
+  name: How meta
+  technologies_used: Ruby, Rails, Zurb, Javascript
+
+freelance:
+  name: Barnyard Cereal
+  technologies_used: Ruby, Rails, Farmville API, Automilker
