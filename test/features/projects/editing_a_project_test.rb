@@ -12,7 +12,7 @@ feature "Editing a Project" do
 
     #Then the new name and technology info should match.
     page.text.must_include "success"
-    page.text.must_include projects(:project_after_edit).name  #users(:david).id
+    page.text.must_include projects(:project_after_edit).name
     page.text.must_include projects(:project_after_edit).technologies_used
   end
 
