@@ -3,8 +3,7 @@ require "test_helper"
 feature "As a site visitor, I want to be able to get an account" do
   scenario "sign up" do
     # Given a registration form
-    visit "/"
-    click_on "Sign Up"
+    visit "/users/sign_up"
 
     # When I register with valid info
     fill_in "Email", with: "test@example.com"
