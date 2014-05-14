@@ -6,9 +6,9 @@
 # below each fixture, per the syntax in the comments below
 #
 one:
-  email: Sally
+  email: Sally@example.com
   encrypted_password: <%= User.new.send(:password_digest, 'password')
 
 two:
-  email: Fred
+  email: Fred@example.com
   encrypted_password: <%= User.new.send(:password_digest, 'password')

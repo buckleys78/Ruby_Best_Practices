@@ -3,6 +3,7 @@ require "test_helper"
 feature "Deleting A Post" do
   scenario "clicking delete removes the record" do
     # Given an existing post
+    sign_in
     post = posts(:cr)
     visit posts_path
 
