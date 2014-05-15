@@ -4,10 +4,10 @@ feature "Editing A Post" do
   scenario "submit updates to an existing post" do
     # Given an existing post
     sign_in
-    post = Post.create(title: "Becoming a Code Fellow",
-                       body: "Means striving for excellence.")
-    visit post_path(post)
+    #post = posts(:cr).title
+    #post = Post.create(title: posts(:cr).title, body: posts(:cr).body)
 
+    visit post_path(posts(:cr))
     # When I click edit and submit changed data
     click_on "Edit"
     fill_in "Title", with: "Becoming a Web Development"

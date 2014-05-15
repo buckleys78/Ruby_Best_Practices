@@ -15,6 +15,10 @@ gem 'spring',    group: :development      # Spring speeds up development by keep
 gem "minitest-rails"
 gem 'foundation-rails'
 
+group :development, :test do
+  gem 'pry-rails'
+end
+
 group :development do
   gem 'sqlite3'
   gem 'better_errors'

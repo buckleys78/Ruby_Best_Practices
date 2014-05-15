@@ -6,8 +6,9 @@ feature "Creating A Post" do
     sign_in
 
     visit new_post_path
-    fill_in "Title", with:  posts(:cr).title
-    fill_in "Body",  with:  posts(:cr).body
+    # save_and_open_page
+    fill_in "Title", with: posts(:cr).title
+    fill_in "Body",  with: posts(:cr).body
 
     # When I submit form
     click_on "Create Post"

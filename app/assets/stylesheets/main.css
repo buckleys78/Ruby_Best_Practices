@@ -207,7 +207,7 @@ pre {
 	border: 2px solid #e2e2e2;
 	border-radius: 4px;
 	margin: 0 0 1.25rem;
-	margin-bottom: ;
+	margin-bottom: 0px;
 	padding: 9.5px;
 	word-break: break-all;
 	word-wrap: break-word;
@@ -220,7 +220,7 @@ pre {
 .top-bar .name h1 a:hover,
 .top-bar-section li a:not(.button):hover {
 	text-decoration: none;
-	
+
 }
 .top-bar .name h1 a {
 	font-family: "Raleway", "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
@@ -303,7 +303,7 @@ pre {
 		.intro p.lead {
 			font-size: 1.438rem;
 		}
-			.intro .button {		
+			.intro .button {
 				margin-right: 5px;
 			}
 				.intro img {
@@ -705,7 +705,7 @@ body.login {
 		line-height: 1.5;
 		padding: 0 0 0 21px;
 		text-indent: -13px;
-		margin-bottom: 10px;	
+		margin-bottom: 10px;
 	}
 	.social-media li {
 		line-height: 1;
@@ -795,7 +795,7 @@ body.login {
 	0% {
 		opacity: 0;
 		-moz-transform: translateX(-2000px);
-	}	
+	}
 	100% {
 		-moz-transform: translateX(0);
 	}
