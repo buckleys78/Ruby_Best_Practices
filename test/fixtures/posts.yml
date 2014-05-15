@@ -1,4 +1,3 @@
-
 cr:
   title: Code Rails
   body: This is how I learned web development!
@@ -6,4 +5,3 @@ cr:
 http:
   title: Intro to http
   body: It is all about the request response cycle!
-
