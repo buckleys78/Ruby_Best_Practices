@@ -1,2 +1,3 @@
 module WelcomeHelper
+  #helper for views...
 end

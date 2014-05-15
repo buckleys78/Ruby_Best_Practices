@@ -8,10 +8,10 @@ feature "As a site visitor, I want to be able to sign out" do
     fill_in "Password", with: "password"
 
     # When I click on the sign-out link
-    click_on "Sign out"
+    click_on("Sign out", :match => :first)
 
     # Then I should be signed out
-    page.will_have_content "signed out"
-    page.wont_have_content "signed in"
+    page.should have_content "signed out"
+    page.wont have_content "signed in"
   end
 end

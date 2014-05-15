@@ -13,7 +13,7 @@
 
   <body>
 
-    <div id="user_nav">
+    <div class="user_nav">
       <% if current_user.present? %>
         <%= link_to "Sign out", destroy_user_session_path %>
       <% else %>
