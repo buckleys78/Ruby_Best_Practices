@@ -7,7 +7,7 @@ feature "Editor has certain capabilities" do
     sign_in(:editor)
 
     #When
-    visit new_posts_path
+    visit new_post_path
     #Then
     page.must_have_field('Published')
 

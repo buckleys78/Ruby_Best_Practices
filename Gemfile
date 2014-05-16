@@ -4,6 +4,7 @@ gem 'coffee-rails', '~> 4.0.0'  # Use CoffeeScript for .js.coffee assets and vie
 gem 'devise'
 gem 'jbuilder', '~> 2.0'  # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jquery-rails'  # Use jquery as the JavaScript library
+gem 'pundit'
 gem 'rails', '4.1.1'  # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'turbolinks'  # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
 gem 'sass-rails', '~> 4.0.3'  # Use SCSS for stylesheets
@@ -17,6 +18,8 @@ gem 'foundation-rails'
 
 group :development, :test do
   gem 'pry-rails'
+  gem 'pry-nav'
+  gem 'pry-stack_explorer'
 end
 
 group :development do
