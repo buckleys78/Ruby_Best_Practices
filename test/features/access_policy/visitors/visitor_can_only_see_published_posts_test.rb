@@ -1,15 +1,18 @@
 require "test_helper"
 
 feature "Vistor has certain capabilities" do
-  scenario "As an Visitor, I cannot visit new_post_path" do
+  scenario "As a Visitor, I cannot see unpublished posts." do
 
-    visit new_post_path
-    page.must_have_content "You need to sign in or sign up before continuing"
+    #Given that two posts are in the DB, one published, and
+    # the other unpublished.
+    pub_post = posts(:pubpost)
+    unpub_post = posts(:unpubpost)
 
-  end
-
-  scenario "As a Visitor, I cannot see the new post button" do
+    #When visitor visits the 'show' page
     visit posts_path
-    page.wont_have_link "New Post"
+
+    #Then only the published post should be visible
+    page.must_have_content posts(:pubpost).title
+    page.wont_have_content posts(:unpubpost).title
   end
 end

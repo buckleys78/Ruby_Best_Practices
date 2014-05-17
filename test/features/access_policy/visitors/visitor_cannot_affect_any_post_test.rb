@@ -1,20 +1,17 @@
 require "test_helper"
 
 feature "Vistor has certain capabilities" do
-  scenario "As an Visitor, I am Read-Only" do
+  scenario "As an Visitor, I am Read-only" do
 
-    # # Given an existing post
-    # sign_in
-    # visit post_path(posts(:cr))
+    #Given I am not signed in,
 
-    # # When I click edit and submit changed data
-    # click_on "Edit"
-    # fill_in "Title", with: "Becoming a Web Development"
-    # click_on "Update Post"
+    #When I view posts
+    visit posts_path
 
-    # # Then the post is updated.
-    # page.text.must_include "Post was successfully updated."
-    # page.text.must_include "Web Development"
+    #Then I can't see links to Edit or Destroy posts.
+    page.must_have_content "Listing posts"
+    page.wont_have_link "Edit"
+    page.wont_have_link "Destroy"
 
   end
 end

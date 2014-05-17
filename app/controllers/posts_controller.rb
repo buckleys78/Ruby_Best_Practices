@@ -2,11 +2,12 @@ class PostsController < ApplicationController
   before_action :authenticate_user!, except:[:index, :show]
   before_action :set_post, only: [:show, :edit, :update, :destroy]
 
-  skip_before_action :verify_authenticity_token, only: :destroy
+  #skip_before_action :verify_authenticity_token, only: :destroy
   # GET /posts
   # GET /posts.json
   def index
-    @posts = Post.all
+    #@posts = Post.all
+    @posts = policy_scope(Post)
   end
 
   # GET /posts/1
@@ -65,15 +66,15 @@ class PostsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_post
-      @post = Post.find(params[:id])
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_post
+    @post = Post.find(params[:id])
+  end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def post_params
-      #params.require(:post).permit(:title, :body,(:published if current_user.role == "editor"))
-      binding.pry
-      params.require(:post).permit(:title, :body,(:published if PostPolicy.new(current_user, @post).publish?))
-    end
+  # Never trust parameters from the scary internet, only allow the white list through.
+  def post_params
+    #params.require(:post).permit(:title, :body,(:published if current_user.role == "editor"))
+    #binding.pry
+    params.require(:post).permit(:title, :body,(:published if PostPolicy.new(current_user, @post).publish?))
+  end
 end

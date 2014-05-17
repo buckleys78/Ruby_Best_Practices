@@ -9,3 +9,16 @@ http:
   body: It is all about the request response cycle!
   author: one
   published: true
+
+unpubpost:
+  title: Not approved
+  body: This submission needs approval.
+  author: one
+  published: false
+
+pubpost:
+  title: Published
+  body: This submission was approved.
+  author: one
+  published: true
+

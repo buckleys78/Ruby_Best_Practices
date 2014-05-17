@@ -1,5 +1,6 @@
+Rails.env = "test"
 puts "RAILS ENV: " + Rails.env + "."
-ENV["RAILS_ENV"] = "test"
+
 require File.expand_path("../../config/environment", __FILE__)
 require "rails/test_help"
 require "minitest/rails"
@@ -24,22 +25,23 @@ class ActiveSupport::TestCase
   fixtures :all
 
   # Add more helper methods to be used by all tests here...
-  def sign_in(role = :editor)
-    #puts "User: " + users(:one).email
-    #puts "Count: " + User.all.count.to_s
-    visit new_user_session_path
-    fill_in "Email", with: users(role).email
+  def sign_in(user_fixture)
+    visit user_session_path
+    fill_in "Email", with: users(user_fixture).email
     fill_in "Password", with: "password"
     click_button("Sign in")
   end
+
+# def new_post
+#   visit new_post_path
+#   fill_in "Title", with: posts(:cr).title
+#   fill_in "Body", with: posts(cr:).body
+#   click_on "Create Post"
+# end
+
 end
 
-
-
-
-#class ActionDispatch::IntegrationTest
- # include Capybara::DSL
-  #include Capybara::Assertions
-#end
-
-
+class ActionDispatch::IntegrationTest
+  include Capybara::DSL
+  include Capybara::Assertions
+end

@@ -8,7 +8,7 @@ feature "Check For Zurb gem" do
     visit root_path
 
     #Then a stylesheet with Zurb in the name is found.
-    #page.html.must_include "foundation_and_overrides.css"
+    page.html.must_include "foundation_and_overrides.css"
 
   end
 end

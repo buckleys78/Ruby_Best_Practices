@@ -7,7 +7,7 @@ feature "Author has certain capabilities" do
 
     visit new_post_path
 
-    page.wont_have_field('Published')
+    page.wont_have_field("Published")
 
   end
 end

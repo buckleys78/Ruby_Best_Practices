@@ -6,12 +6,6 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
   has_many :posts, foreign_key: "author_id"
 
-  # def initialize
-  # #   if role.nil?
-  # #     role = 'author'
-  # #   end
-  # end
-
   def author?
     role == 'author'
   end

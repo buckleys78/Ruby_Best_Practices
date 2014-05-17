@@ -8,7 +8,6 @@ feature "Showing a single project" do
 
     #When that project is chosen
     visit projects_path
-
     first(:link, "Show").click
 
     #Then the project information is shown
