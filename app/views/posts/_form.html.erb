@@ -20,10 +20,10 @@
     <%= f.text_area :body %>
   </div>
   <div class="field">
-    <% if PostPolicy.new(current_user, @post).publish? %>
+    <% if policy(Post).publish? %>
       <div class="row collapse">
         <div class="small-3 columns">
-          <%= f.label :published, class: "right inline", title: "Is this post published?", data: {tooltip: true} %></br>
+          <%= f.label :published, class: "right inline", title: "Published?", data: {tooltip: true} %></br>
         </div>
         <div class="small-9 columns">
           <%= f.check_box :published %>

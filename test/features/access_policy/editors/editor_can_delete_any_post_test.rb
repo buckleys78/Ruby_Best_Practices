@@ -1,20 +1,19 @@
 require "test_helper"
 
 feature "Editor has certain capabilities" do
+
   scenario "As an Editor, I can delete any post" do
-
-    # Given I am logged on as Editor
-    sign_in(:editor)
-
-    # When I click destroy
-    title = posts(:cr).title
+    # Given I have Editor credentials, an existing post,
+    sign_in (:editor)
+    post = posts(:cr)
     visit posts_path
-    #page.must_have_content title
-    page.find('tr', :text => title).click_on "Destroy"
+    # and the title is confirmed present,
+    page.must_have_content post.title
 
-    # Then the post is deleted.
-    #page.wont_have_content "Code Rails"
-    page.wont_have_content title
+    # When I click delete
+    page.find('tr', :text => post.title).click_on "Destroy"
 
+    # Then the post is removed from the page.
+    page.wont_have_content post.title
   end
 end
