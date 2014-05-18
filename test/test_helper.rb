@@ -1,3 +1,6 @@
+require 'simplecov'
+SimpleCov.start 'rails'
+
 Rails.env = "test"
 puts "RAILS ENV: " + Rails.env + "."
 
