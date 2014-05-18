@@ -1,20 +1,25 @@
 require "test_helper"
 
 feature "Editor has certain capabilities" do
-  scenario "As an Editor, I can create a post" do
+  scenario "As an Editor, I want to create new posts of my own" do
+    # Given a logon as author,
+    sign_in(:editor)
 
-    # # Given an existing post
-    # sign_in
-    # visit post_path(posts(:cr))
+    #When I visit the new post page
+    visit new_post_path
 
-    # # When I click edit and submit changed data
-    # click_on "Edit"
-    # fill_in "Title", with: "Becoming a Web Development"
-    # click_on "Update Post"
+    # and complete the post
+    fill_in "Title", with: posts(:cr).title
+    fill_in "Body",  with: posts(:cr).body
 
-    # # Then the post is updated.
-    # page.text.must_include "Post was successfully updated."
-    # page.text.must_include "Web Development"
+    # and I submit form
+    click_on "Create Post"
 
+    #Then a new post should be created and displayed
+    page.text.must_include "Post was successfully created"
+    page.text.must_include posts(:cr).body
+    page.has_css? "#author"
+    page.text.must_include users(:editor).email
+    page.text.must_include "Status: Unpublished"
   end
 end

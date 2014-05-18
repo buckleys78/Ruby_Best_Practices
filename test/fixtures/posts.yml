@@ -22,3 +22,20 @@ pubpost:
   author: one
   published: true
 
+twos_post:
+  title: A post by Two
+  body: This post was made by Two
+  author: two
+  published: true
+
+editors_pub_post:
+  title: Published by Editor
+  body: This post was published by the editor
+  author: author
+  published: true
+
+editors_unpub_post:
+  title: Unpublished by Editor
+  body: This post is not yet published by the editor
+  author: author
+  published: false

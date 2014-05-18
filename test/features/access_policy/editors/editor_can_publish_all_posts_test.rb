@@ -31,12 +31,13 @@ feature "Editor has certain capabilities" do
     # When I visit the page to edit an existing post,
     visit post_path(posts(:unpubpost))
     page.text.must_include "Status: Unpublished"
-    save_and_open_page
+    click_on "Edit"
+
     # Then I will not see the Publish checkbox
     page.must_have_field('Published')
     # and I can publish the post
     check "Published"
-    click_on "Create Post"
+    click_on "Update Post"
     # and
     page.text.must_include "Status: Published"
 

@@ -11,12 +11,12 @@ class User < ActiveRecord::Base
   end
 
   def editor?
-    role = 'editor'
+    role == 'editor'
   end
 
   def set_default_role
     if role.nil?
-      role = 'author'
+      role == 'author'
     end
   end
 end

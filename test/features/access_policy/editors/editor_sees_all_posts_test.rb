@@ -3,18 +3,17 @@ require "test_helper"
 feature "Editor has certain capabilities" do
   scenario "As an Editor, I can see all posts" do
 
-    # # Given an existing post
-    # sign_in
-    # visit post_path(posts(:cr))
+    # Given I am signed in with Author credentials,
+    sign_in(:editor)
 
-    # # When I click edit and submit changed data
-    # click_on "Edit"
-    # fill_in "Title", with: "Becoming a Web Development"
-    # click_on "Update Post"
+    # When I view post index,
+    visit posts_path
 
-    # # Then the post is updated.
-    # page.text.must_include "Post was successfully updated."
-    # page.text.must_include "Web Development"
-
+    # Then I only see my posts,
+    page.must_have_content posts(:editors_pub_post).title
+    page.must_have_content posts(:editors_unpub_post).title
+    # and I can see other people's posts, published or no.
+    page.must_have_content posts(:pubpost).title
+    page.must_have_content posts(:unpubpost).title
   end
 end

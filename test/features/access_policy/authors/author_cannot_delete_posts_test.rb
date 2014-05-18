@@ -1,20 +1,20 @@
 require "test_helper"
 
-feature "Editor has certain capabilities" do
-  scenario "As an Author, I can see all posts" do
+feature "Author has certain capabilities" do
+  scenario "As an Author, I can delete my own posts" do
+    # Given I have Author credentials, an existing post,
+    sign_in (:one)
+    post = posts(:cr)
+    visit posts_path
 
-    # # Given an existing post
-    # sign_in
-    # visit post_path(posts(:cr))
+    # and the title is confirmed present,
+    page.must_have_content post.title
 
-    # # When I click edit and submit changed data
-    # click_on "Edit"
-    # fill_in "Title", with: "Becoming a Web Development"
-    # click_on "Update Post"
+    # When I click delete
+    page.find('tr', :text => post.title).click_on "Destroy"
 
-    # # Then the post is updated.
-    # page.text.must_include "Post was successfully updated."
-    # page.text.must_include "Web Development"
-
+    # Then the post is removed from the page.
+    page.wont_have_content post.title
   end
+
 end

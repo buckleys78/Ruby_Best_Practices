@@ -3,18 +3,15 @@ require "test_helper"
 feature "Author has certain capabilities" do
   scenario "As an Author, I want to see only my own posts" do
 
-    # # Given an existing post
-    # sign_in
-    # visit post_path(posts(:cr))
+    # Given I am signed in with Author credentials,
+    sign_in(:one)
 
-    # # When I click edit and submit changed data
-    # click_on "Edit"
-    # fill_in "Title", with: "Becoming a Web Development"
-    # click_on "Update Post"
+    # When I view post index,
+    visit posts_path
 
-    # # Then the post is updated.
-    # page.text.must_include "Post was successfully updated."
-    # page.text.must_include "Web Development"
+    # Then I only see my own posts.
+    page.must_have_content posts(:pubpost).title
+    page.wont_have_content posts(:twos_post).title
 
   end
 end

@@ -11,7 +11,7 @@ feature "As a site visitor, I want to be able to get an account" do
     fill_in "Password", with: "password"
     fill_in "Password confirmation", with: "password"
     click_on("Sign up", :match => :first)
-    save_and_open_page
+    #save_and_open_page
 
     # Then I should be signed up.
     visit root_path
