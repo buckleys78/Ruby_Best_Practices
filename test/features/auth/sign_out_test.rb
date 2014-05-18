@@ -12,13 +12,12 @@ feature "As a site visitor, I want to be able to sign out" do
 
     # When I click on the sign-out link
     visit root_path
-    # save_and_open_page
-    click_link "Sign out"
-    #click_link("Sign out", :match => :first)
+
+    #click_link "Sign out"
+    click_link("Sign out", :match => :first)
+    save_and_open_page
 
     # Then I should be signed out
-
-
     # page.should have_content "Signed out"
     # page.wont have_content "Signed in"
     # page.text.must_include("Sign out")
