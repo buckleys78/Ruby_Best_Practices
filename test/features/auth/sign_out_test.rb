@@ -15,7 +15,7 @@ feature "As a site visitor, I want to be able to sign out" do
 
     #click_link "Sign out"
     click_link("Sign out", :match => :first)
-    save_and_open_page
+    #save_and_open_page
 
     # Then I should be signed out
     # page.should have_content "Signed out"

@@ -1,0 +1,11 @@
+appr_comment_on_editors_post:
+  content: an approved comment on the editor's post.
+
+unappr_comment_on_editors_post:
+  content: an unapproved comment on the editor's post.
+
+appr_comment_on_authors_post:
+  content: an approved comment on the author's post.
+
+unappr_comment_on_authors_post:
+  content: an unapproved comment on the author's post.
