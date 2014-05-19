@@ -1,4 +1,5 @@
 require 'simplecov'
+SimpleCov.command_name 'minitest'
 SimpleCov.start 'rails'
 
 Rails.env = "test"

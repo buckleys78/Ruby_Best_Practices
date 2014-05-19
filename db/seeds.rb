@@ -6,3 +6,5 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
+# .bashrc    echo $SIMPLE_PASS
+User.create!(email: buckleys78@gmail.com.com, password: ENV["SIMPLE_PASS"], password_confirmation: ENV["SIMPLE_PASS"])
