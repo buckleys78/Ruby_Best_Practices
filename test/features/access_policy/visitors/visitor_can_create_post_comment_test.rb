@@ -6,6 +6,7 @@ feature "Visitor has certain capabilities" do
 
     #When I visit the new post page
     visit post_path(posts(:editors_pub_post))
+    save_and_open_page
 
     # and comment on the post
     fill_in "Content", with: "My thoughts"

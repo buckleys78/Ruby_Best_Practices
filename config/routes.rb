@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
 
 
-  resources :comments
+
 
   devise_for :users
   # The priority is based upon order of creation: first created -> highest priority.
@@ -21,6 +21,7 @@ Rails.application.routes.draw do
   #   resources :products
   resources :posts
   resources :projects
+  resources :comments
 
   # Example resource route with options:
   #   resources :products do
@@ -39,6 +40,9 @@ Rails.application.routes.draw do
   #     resources :comments, :sales
   #     resource :seller
   #   end
+  resources :posts do
+    resources :comments, shallow: true
+  end
 
   # Example resource route with more complex sub-resources:
   #   resources :products do
@@ -54,6 +58,10 @@ Rails.application.routes.draw do
   #   end
   #   resources :posts, concerns: :toggleable
   #   resources :photos, concerns: :toggleable
+  concern :commentable do
+    resources :comments
+  end
+  resources :posts, concerns: :commentable
 
   # Example resource route within a namespace:
   #   namespace :admin do
