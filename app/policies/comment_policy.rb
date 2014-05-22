@@ -14,19 +14,19 @@ class CommentPolicy < Struct.new(:user, :comment)
   end
 
   def update?
-    @user.present? && (@user.editor? || @user.owner_of(@post))
+    @user.present? && (@user.editor? || @user.author?)
   end
 
   def edit?
-    @user.present? && (@user.editor? || @user.owner_of(@post))
+    @user.present? && (@user.editor? || @user.author?)
   end
 
   def destroy?
-    @user.present? && (@user.editor? || @user.owner_of(@post))
+    @user.present? && (@user.editor? || @user.author?)
   end
 
   def approve?
-    @user.present? && (@user.editor? || @user.owner_of(@post))
+    @user.present? && (@user.editor? || @user.author?)
   end
 
   class Scope < Struct.new(:user, :scope)
