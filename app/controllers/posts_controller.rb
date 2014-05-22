@@ -71,6 +71,10 @@ class PostsController < ApplicationController
     @post = Post.find(params[:id])
   end
 
+  def set_comment
+    @comment = post.comments.build([:comment_id])
+  end
+
   # Never trust parameters from the scary internet, only allow the white list through.
   def post_params
     #params.require(:post).permit(:title, :body,(:published if current_user.role == "editor"))

@@ -14,6 +14,10 @@ class User < ActiveRecord::Base
     role == 'editor'
   end
 
+  def owner_of?(comment)
+    comment.
+  end
+
   def set_default_role
     if role.nil?
       role == 'author'

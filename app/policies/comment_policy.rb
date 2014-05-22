@@ -1,4 +1,4 @@
-class CommentPolicy < Struct.new(:user, :post, :comment)
+class CommentPolicy < Struct.new(:user, :comment)
 
   def initialize(user, comment)
     @user = user
@@ -14,19 +14,19 @@ class CommentPolicy < Struct.new(:user, :post, :comment)
   end
 
   def update?
-    @user.present? && (@user.editor? || @user.author?)
+    @user.present? && (@user.editor? || @user.owner_of(@post))
   end
 
   def edit?
-    @user.present? && (@user.editor? || @user.author?)
+    @user.present? && (@user.editor? || @user.owner_of(@post))
   end
 
   def destroy?
-    @user.present? && (@user.editor? || @user.author?)
+    @user.present? && (@user.editor? || @user.owner_of(@post))
   end
 
-  def publish?
-    @user.present? && @user.editor?
+  def approve?
+    @user.present? && (@user.editor? || @user.owner_of(@post))
   end
 
   class Scope < Struct.new(:user, :scope)
@@ -36,7 +36,7 @@ class CommentPolicy < Struct.new(:user, :post, :comment)
       elsif user.present? && user.author?
         scope.where(author_id: user.id)
       else
-        scope.where(published: true)
+        scope.where(approved: true)
       end
     end
   end
