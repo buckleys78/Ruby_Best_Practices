@@ -7,6 +7,7 @@ class PostsController < ApplicationController
   # GET /posts.json
   def index
     @posts = policy_scope(Post)
+    #@lists = List.all
   end
 
   # GET /posts/1

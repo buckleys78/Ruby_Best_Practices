@@ -5,6 +5,7 @@ class CommentsController < ApplicationController
 
   def index
     @posts = policy_scope(Comment)
+    #@steps = @list.steps.all
   end
 
   def show

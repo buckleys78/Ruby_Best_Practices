@@ -1,11 +1,15 @@
 appr_comment_on_editors_post:
   content: an approved comment on the editor's post.
+  approved: true
 
 unappr_comment_on_editors_post:
   content: an unapproved comment on the editor's post.
+  approved: false
 
 appr_comment_on_authors_post:
   content: an approved comment on the author's post.
+  approved: true
 
 unappr_comment_on_authors_post:
   content: an unapproved comment on the author's post.
+  approved: false
