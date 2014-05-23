@@ -1,8 +1,7 @@
 source 'https://rubygems.org'
 
-
-
 gem 'coffee-rails', '~> 4.0.0'  # Use CoffeeScript for .js.coffee assets and views
+gem 'devise'
 gem 'jbuilder', '~> 2.0'  # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jquery-rails'  # Use jquery as the JavaScript library
 gem 'rails', '4.1.1'  # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
@@ -16,8 +15,14 @@ gem 'spring',    group: :development      # Spring speeds up development by keep
 gem "minitest-rails"
 gem 'foundation-rails'
 
+group :development, :test do
+  gem 'pry-rails'
+end
+
 group :development do
   gem 'sqlite3'
+  gem 'better_errors'
+  gem 'binding_of_caller'
 end
 
 group :test do
