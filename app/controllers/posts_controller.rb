@@ -7,6 +7,7 @@ class PostsController < ApplicationController
   # GET /posts.json
   def index
     @posts = policy_scope(Post)
+    #@lists = List.all
   end
 
   # GET /posts/1
@@ -21,6 +22,7 @@ class PostsController < ApplicationController
 
   # GET /posts/1/edit
   def edit
+    #need to use authorize(@post)
   end
 
   # POST /posts
@@ -70,10 +72,14 @@ class PostsController < ApplicationController
     @post = Post.find(params[:id])
   end
 
+  def set_comment
+    @comment = post.comments.build([:comment_id])
+  end
+
   # Never trust parameters from the scary internet, only allow the white list through.
   def post_params
     #params.require(:post).permit(:title, :body,(:published if current_user.role == "editor"))
     #binding.pry
-    params.require(:post).permit(:title, :body,(:published if PostPolicy.new(current_user, @post).publish?))
+    params.require(:post).permit(:title, :body, (:published if PostPolicy.new(current_user, @post).publish?))
   end
 end

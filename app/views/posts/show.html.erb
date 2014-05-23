@@ -20,5 +20,31 @@
   <%=@post.published? ? "Published" : "Unpublished" %>
 </p>
 
-<%= link_to 'Edit', edit_post_path(@post) %> |
+<p>
+  <strong>Comments:</strong>
+  <table>
+    <thead>
+      <tr>
+        <th>Author</th>
+        <th>Comment</th>
+        <th colspan="3"></th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @post.comments.each do |c| %>
+        <tr>
+          <td><%= c.author %></td>
+          <td><%= c.content %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</p>
+
+
+<%= link_to 'New Comment', new_post_comment_path(@post) %>
+<%= link_to 'Show Comments', post_comments_path(@post) %>
+<% if policy(@post).edit? %>
+  <%= link_to 'Edit', edit_post_path(@post) %>
+<% end %>
 <%= link_to 'Back', posts_path %>

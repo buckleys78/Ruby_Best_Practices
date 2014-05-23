@@ -9,15 +9,15 @@ feature "Creating A Post" do
     visit new_post_path
 
     # and complete the post
-    fill_in "Title", with: posts(:cr).title
-    fill_in "Body",  with: posts(:cr).body
+    fill_in "Title", with: posts(:authors_unpub_post).title
+    fill_in "Body",  with: posts(:authors_unpub_post).body
 
     # and I submit form
     click_on "Create Post"
 
     #Then a new post should be created and displayed
     page.text.must_include "Post was successfully created"
-    page.text.must_include posts(:cr).body
+    page.text.must_include posts(:authors_unpub_post).body
     page.has_css? "#author"
     page.text.must_include users(:author).email
     page.text.must_include "Status: Unpublished"

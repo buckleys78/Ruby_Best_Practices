@@ -28,14 +28,26 @@ twos_post:
   author: two
   published: true
 
+authors_pub_post:
+  title: Written by Author not yet published
+  body: This post was published by the editor
+  author: author
+  published: true
+
+authors_unpub_post:
+  title: Written by Author not yet published
+  body: This post is not yet published by the editor
+  author: author
+  published: false
+
 editors_pub_post:
   title: Published by Editor
   body: This post was published by the editor
-  author: author
+  author: editor
   published: true
 
 editors_unpub_post:
   title: Unpublished by Editor
   body: This post is not yet published by the editor
-  author: author
+  author: editor
   published: false
