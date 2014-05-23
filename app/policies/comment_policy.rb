@@ -6,11 +6,11 @@ class CommentPolicy < Struct.new(:user, :comment)
   end
 
   def create?
-    @user.present? && (@user.editor? || @user.author?)
+    # @user.present? && (@user.editor? || @user.author?)
   end
 
   def show?
-    scope.where(:id => post.id).exists?
+    # scope.where(:post_id => post.id).exists?
   end
 
   def update?

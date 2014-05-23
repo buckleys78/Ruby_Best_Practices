@@ -1,5 +1,5 @@
 class CommentsController < ApplicationController
-  before_action :authenticate_user!, except:[:index, :show]
+  before_action :authenticate_user!, except:[:index, :show, :create, :new]
   before_action :set_comment, only: [:show, :edit, :update, :destroy]
   before_action :load_post
 
@@ -40,7 +40,7 @@ class CommentsController < ApplicationController
   end
 
   def update
-    # @comment= @post.comments.update(comment_params)
+    @comment= @post.comments.find(params[:id])
     respond_to do |format|
       if @comment.update(comment_params)
         format.html { redirect_to post_comment_path, notice: 'Comment was successfully updated.' }
@@ -53,6 +53,8 @@ class CommentsController < ApplicationController
   end
 
   def destroy
+    #binding.pry
+    @comment = @post.comments.find(params[:id])
     @commment.destroy
     respond_to do |format|
       format.html { redirect_to steps_url, notice: 'Comment was successfully destroyed.' }
