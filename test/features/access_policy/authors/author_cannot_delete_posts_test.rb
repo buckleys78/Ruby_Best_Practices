@@ -1,11 +1,12 @@
 require "test_helper"
 
-feature "Deleting A Post" do
-  scenario "As Editor, clicking delete removes the record" do
-    # Given I have Editor credentials, an existing post,
-    sign_in (:editor)
+feature "Author has certain capabilities" do
+  scenario "As an Author, I can delete my own posts" do
+    # Given I have Author credentials, an existing post,
+    sign_in (:one)
     post = posts(:cr)
     visit posts_path
+
     # and the title is confirmed present,
     page.must_have_content post.title
 
@@ -15,4 +16,5 @@ feature "Deleting A Post" do
     # Then the post is removed from the page.
     page.wont_have_content post.title
   end
+
 end

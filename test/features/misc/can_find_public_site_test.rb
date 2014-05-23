@@ -7,7 +7,6 @@ feature "Can Find Public Site" do
     # When the address is requested,
     visit "http://Steve-Buckley.com"
 
-
     # The welcome page delivers expected content.
     page.must_have_content "Steve Buckley"
 

@@ -1,7 +1,7 @@
 require "test_helper"
 
-feature "Creating A Post" do
-  scenario "submit form data to create a new post" do
+feature "Author has certain capabilities" do
+  scenario "As an Author, I want to create new posts of my own" do
     # Given a logon as author,
     sign_in(:author)
 
@@ -23,3 +23,4 @@ feature "Creating A Post" do
     page.text.must_include "Status: Unpublished"
   end
 end
+

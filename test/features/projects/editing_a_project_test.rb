@@ -26,10 +26,10 @@ feature "Editing a Project" do
     click_on "Update Project"
 
     #then the user is redirected back to the page
-    #current_path.must_match /projects/#{projects(:project_before_edit.id)}   #= /projects/57731606
+    current_path.must_include projects(:project_before_edit).id.to_s
     # and an alert is given.
-    #page.text.must_include "Project could not be saved"
-    #page.text.must_include "Name is too short"
-    #page.text.must_include "Technologies used can't be blank"
+    page.text.must_include "prohibited being saved"
+    page.text.must_include "Name is too short"
+    page.text.must_include "Technologies used can't be blank"
   end
 end

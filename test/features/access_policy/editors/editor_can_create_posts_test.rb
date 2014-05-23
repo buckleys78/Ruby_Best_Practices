@@ -1,9 +1,9 @@
 require "test_helper"
 
-feature "Creating A Post" do
-  scenario "submit form data to create a new post" do
+feature "Editor has certain capabilities" do
+  scenario "As an Editor, I want to create new posts of my own" do
     # Given a logon as author,
-    sign_in(:author)
+    sign_in(:editor)
 
     #When I visit the new post page
     visit new_post_path
@@ -19,7 +19,7 @@ feature "Creating A Post" do
     page.text.must_include "Post was successfully created"
     page.text.must_include posts(:cr).body
     page.has_css? "#author"
-    page.text.must_include users(:author).email
+    page.text.must_include users(:editor).email
     page.text.must_include "Status: Unpublished"
   end
 end

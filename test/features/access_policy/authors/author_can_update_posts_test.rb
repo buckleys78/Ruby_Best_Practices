@@ -1,7 +1,8 @@
 require "test_helper"
 
-feature "Editing A Post" do
-  scenario "submit updates to an existing post" do
+feature "Author has certain capabilities" do
+  scenario "As an Author, I want to update my own posts" do
+
     # Given an existing post
     sign_in(:author)
     visit post_path(posts(:cr))
@@ -15,5 +16,6 @@ feature "Editing A Post" do
     page.text.must_include "Post was successfully updated."
     page.text.must_include "Web Developer"
     page.wont_have_content posts(:cr).title
+
   end
 end

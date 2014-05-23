@@ -1,7 +1,8 @@
 require "test_helper"
 
-feature "Deleting A Post" do
-  scenario "As Editor, clicking delete removes the record" do
+feature "Editor has certain capabilities" do
+
+  scenario "As an Editor, I can delete any post" do
     # Given I have Editor credentials, an existing post,
     sign_in (:editor)
     post = posts(:cr)

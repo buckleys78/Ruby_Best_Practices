@@ -2,8 +2,40 @@ cr:
   title: Code Rails
   body: This is how I learned web development!
   author: one
+  published: true
 
 http:
   title: Intro to http
   body: It is all about the request response cycle!
   author: one
+  published: true
+
+unpubpost:
+  title: Not approved
+  body: This submission needs approval.
+  author: one
+  published: false
+
+pubpost:
+  title: Published
+  body: This submission was approved.
+  author: one
+  published: true
+
+twos_post:
+  title: A post by Two
+  body: This post was made by Two
+  author: two
+  published: true
+
+editors_pub_post:
+  title: Published by Editor
+  body: This post was published by the editor
+  author: author
+  published: true
+
+editors_unpub_post:
+  title: Unpublished by Editor
+  body: This post is not yet published by the editor
+  author: author
+  published: false
