@@ -6,24 +6,19 @@ class CommentPolicy < Struct.new(:user, :comment)
   end
 
   def create?
-    # @user.present? && (@user.editor? || @user.author?)
+    # anyone can create.
   end
 
   def show?
-    # scope.where(:post_id => post.id).exists?
-    binding.pry
     if @user.present? && @user.editor?
-      true
+      true  # Editor: show all,
     elsif @user.present? && @user.author?
-      post = @comment(:post_id)
+      #Author: all their own, only approved of others
+      post = Post.find(@comment.post_id)
       post.author_id == @user.id || @comment.approved?
     else  #role == 'Visitor'
-      @comment.approved?
+      @comment.approved?    # Visitor: only approved
     end
-
-    # Editor: show all,
-    #Author: all their own, only approved of others
-    # Visitor: only approved
   end
 
   def update?
