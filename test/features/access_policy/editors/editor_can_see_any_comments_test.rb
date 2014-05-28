@@ -38,7 +38,7 @@ feature "Editor has certain capabilities" do
 
     #When visitor visits the 'show' page for a given post
     visit post_path post
-save_and_open_page
+
     #Then only the published post should be visible
     page.must_have_content approved_comment.content
     page.must_have_content unapproved_comment.content

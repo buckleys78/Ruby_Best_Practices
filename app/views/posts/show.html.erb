@@ -31,11 +31,13 @@
       </tr>
     </thead>
     <tbody>
-      <% @post.comments.each do |c| %>
-        <tr>
-          <td><%= c.author %></td>
-          <td><%= c.content %></td>
-        </tr>
+      <% @post.comments.each do |comment| %>
+        <% if policy(comment).show? %>
+          <tr>
+            <td><%= comment.author %></td>
+            <td><%= comment.content %></td>
+          </tr>
+        <% end %>
       <% end %>
     </tbody>
   </table>
