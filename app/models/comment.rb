@@ -1,4 +1,3 @@
 class Comment < ActiveRecord::Base
-  belongs_to :post, polymorphic: true     #modified
-  belongs_to :project, polymorphic: true  #new
+  belongs_to :commentable, polymorphic: true     #modified
 end

@@ -1,19 +1,23 @@
 appr_comment_on_editors_post:
+  author: editor
   content: an approved comment on the editor's post.
-  post_id: editors_pub_post.id
+  commentable: editors_pub_post(Post)
   approved: true
 
 unappr_comment_on_editors_post:
+  author: editor
   content: an unapproved comment on the editor's post.
-  post_id: editors_pub_post.id
+  commentable: editors_pub_post(Post)
   approved: false
 
 appr_comment_on_authors_post:
+  author: author
   content: an approved comment on the author's post.
-  post_id: pubpost.id
+  commentable: authors_pub_post(Post)
   approved: true
 
 unappr_comment_on_authors_post:
+  author: author
   content: an unapproved comment on the author's post.
-  post_id: pubpost.id
+  commentable: authors_pub_post(Post)
   approved: false

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140604200741) do
+ActiveRecord::Schema.define(version: 20140604204936) do
 
   create_table "comments", force: true do |t|
     t.string   "author"
@@ -24,8 +24,8 @@ ActiveRecord::Schema.define(version: 20140604200741) do
     t.boolean  "approved"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "owner_id"
-    t.string   "owner"
+    t.integer  "commentable_id"
+    t.string   "commentable_type"
   end
 
   create_table "posts", force: true do |t|
