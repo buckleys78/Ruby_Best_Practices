@@ -6,6 +6,7 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable,
          :omniauthable
   has_many :posts, foreign_key: "author_id"
+  has_many :projects, foreign_key: "author_id"  #new
 
   def author?
     role == 'author'

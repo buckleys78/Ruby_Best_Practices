@@ -64,9 +64,9 @@ class CommentsController < ApplicationController
 
   private
   # Use callbacks to share common setup or constraints between actions.
-  def load_post
-    @post = Post.find(params[:post_id])
-  end
+  # def load_post
+  #   @post = Post.find(params[:post_id])
+  # end
 
   def set_comment
     @comment = Comment.find(params[:id])
@@ -75,6 +75,11 @@ class CommentsController < ApplicationController
   # Never trust parameters from the scary internet, only allow the white list through.
   def comment_params
     params.require(:comment).permit(:content, (:approved if CommentPolicy.new(current_user, @comment).approve?))
+  end
+
+  def load_commentable
+    parent_type, parent_id = request.path.split('/')[1..2]
+    @parent = parent_type.singularize.classify.constantize.find(parent_id)
   end
 
 end
