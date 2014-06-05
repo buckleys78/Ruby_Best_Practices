@@ -9,10 +9,10 @@ feature "Editor has certain capabilities" do
     sign_in(:editor)
     post = posts(:authors_pub_post)
     approved_comment = comments(:appr_comment_on_authors_post)
-    approved_comment.post_id = post.id
+    approved_comment.commentable_id = post.id
     post.comments << approved_comment
     unapproved_comment = comments(:unappr_comment_on_authors_post)
-    unapproved_comment.post_id = post.id
+    unapproved_comment.commentable_id= post.id
     post.comments << unapproved_comment
 
     #When I visit the 'show' page for a given post
@@ -30,10 +30,10 @@ feature "Editor has certain capabilities" do
     sign_in(:editor)
     post = posts(:editors_pub_post)
     approved_comment = comments(:appr_comment_on_editors_post)
-    approved_comment.post_id = post.id
+    approved_comment.commentable_id= post.id
     post.comments << approved_comment
     unapproved_comment = comments(:unappr_comment_on_editors_post)
-    unapproved_comment.post_id = post.id
+    unapproved_comment.commentable_id = post.id
     post.comments << unapproved_comment
 
     #When visitor visits the 'show' page for a given post

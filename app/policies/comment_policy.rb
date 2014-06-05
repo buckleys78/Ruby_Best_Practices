@@ -14,8 +14,7 @@ class CommentPolicy < Struct.new(:user, :comment)
       true  # Editor: show all,
     elsif @user.present? && @user.author?
       #Author: all their own, only approved of others
-      post = Post.find(@comment.post_id)
-      post.author_id == @user.id || @comment.approved?
+      @comment.commentable.author_id == @user.id || @comment.approved?
     else  #role == 'Visitor'
       @comment.approved?    # Visitor: only approved
     end
