@@ -15,13 +15,11 @@
   </thead>
 
   <tbody>
-    <% @pcommentable.comments.each do |comment| %>
+    <% @commentable.comments.each do |comment| %>
       <tr>
         <td><%= comment.content %></td>
         <td><%= comment.approved %></td>
-        <td><%= link_to 'Show', @commentable_comment_path(comment) %></td>
-        <td><%= link_to 'Edit', edit_@commentable_comment_path(@commentable, comment) %></td>
-        <td><%= link_to 'Destroy', [@commentable, comment], method: :delete, data: { confirm: 'Are you sure?' } %></td>
+
       </tr>
     <% end %>
   </tbody>
@@ -29,5 +27,5 @@
 
 <br>
 
-<%= link_to 'New Comment', new_commentable_comment_path(@commentable) %>
-<%= link_to 'Back', commentable_path(@commentable) %>
+<%= link_to "New Comment", [:new, @commentable, :comment] %>
+<%= link_to 'Back', @commentable %>

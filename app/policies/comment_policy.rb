@@ -6,7 +6,7 @@ class CommentPolicy < Struct.new(:user, :comment)
   end
 
   def create?
-    # anyone can create.
+    true  # anyone can create comments.
   end
 
   def show?

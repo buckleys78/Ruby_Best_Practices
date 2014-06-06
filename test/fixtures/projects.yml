@@ -13,3 +13,11 @@ portfolio:
 freelance:
   name: Barnyard Cereal
   technologies_used: Ruby, Rails, Farmville API, Automilker
+
+authors_pub_project:
+  name: Project by Author not yet published
+  technologies_used: Ruby, Rails, Zurb, Javascript
+
+editors_pub_project:
+  name: Project by Author not yet published
+  technologies_used: Ruby, Rails, Zurb, Javascript

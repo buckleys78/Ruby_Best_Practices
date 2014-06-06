@@ -8,16 +8,19 @@ feature "Visitor has certain capabilities" do
     #When I visit the new post page
     visit post_path(posts(:editors_pub_post))
     # and click on the new comment link
+
     click_on 'New Comment'
 
-save_and_open_page
     # and comment on the post
+    fill_in "Your name", with: "Troll"
+    fill_in "Your email", with: "iamatroll@caveman.com"
     fill_in "Content", with: "My thoughts"
     # and I submit form
-    click_on "Create Comment"
+
+    click_on "Submit comment for approval"
 
     #Then a new post should be created and displayed
-    page.text.must_include "Comment was successfully created"
+    page.must_have_content "Comment is awaiting consideration"
 
   end
 end

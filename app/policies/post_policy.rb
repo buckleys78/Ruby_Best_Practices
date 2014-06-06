@@ -1,4 +1,4 @@
-class PostPolicy < Struct.new(:user, :post)
+class PostPolicy
 
   def initialize(user, post)
     @user = user
@@ -10,7 +10,7 @@ class PostPolicy < Struct.new(:user, :post)
   end
 
   def show?
-    scope.where(:id => post.id).exists?
+    scope.where(id: post.id).exists?
   end
 
   def update?

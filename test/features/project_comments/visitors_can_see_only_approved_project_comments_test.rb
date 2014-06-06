@@ -8,11 +8,11 @@ feature "Vistor has certain capabilities" do
     project = projects(:editors_pub_project)
 
     approved_comment = comments(:appr_comment_on_editors_project)
-    approved_comment.project_id = project.id
+    approved_comment.commentable_id = project.id
     project.comments << approved_comment
 
     unapproved_comment = comments(:unappr_comment_on_editors_project)
-    unapproved_comment.project_id = project.id
+    unapproved_comment.commentable_id = project.id
     project.comments << unapproved_comment
 
     #When visitor visits the 'show' page for a given post

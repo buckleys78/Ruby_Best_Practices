@@ -9,12 +9,12 @@ class CommentsController < ApplicationController
   end
 
   def show
-    @comments = Comment.find(params[:id])
+    # @comments = Comment.find(params[:id])
     # @comment = @commentable.comments.find(comment_params)
   end
 
   def new
-    # @comment = @commentable.comments.new(comment_params)
+    @comment = @commentable.comments.new
 
     respond_to do |format|
       format.html
@@ -22,7 +22,8 @@ class CommentsController < ApplicationController
   end
 
   def edit
-    @comment = Comment.find(params[:id])
+    # binding.pry
+    # @comment = Comment.find(params[:id])
   end
 
   def create
@@ -35,7 +36,7 @@ class CommentsController < ApplicationController
         # format.json { render :show, status: :created, location: @comment }
       else
         instance_variable_set("@#{@resource.singularize}".to_sym, @commentable)
-        format.html { render template: "#{resource}/show" }
+        format.html { render template: "#{@resource}/show" }
         # format.json { render json: @comment.errors, status: :unprocessable_entity }
       end
     end
@@ -82,8 +83,8 @@ class CommentsController < ApplicationController
   end
 
   def load_commentable
-    resource, @id = request.path.split('/')[1,2]
-    @commentable = resource.singularize.classify.constantize.find(@id)
+    @resource, id = request.path.split('/')[1,2]
+    @commentable = @resource.singularize.classify.constantize.find(id)
   end
 
 end

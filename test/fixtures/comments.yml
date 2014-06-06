@@ -21,3 +21,27 @@ unappr_comment_on_authors_post:
   content: an unapproved comment on the author's post.
   commentable: authors_pub_post(Post)
   approved: false
+
+appr_comment_on_authors_project:
+  author: author
+  content: an approved comment on the author's project.
+  commentable: authors_pub_project(Project)
+  approved: true
+
+unappr_comment_on_authors_project:
+  author: author
+  content: an unapproved comment on the author's project.
+  commentable: authors_pub_project(Project)
+  approved: false
+
+appr_comment_on_editors_project:
+  author: editor
+  content: an approved comment on the editor's project.
+  commentable: editors_pub_project(Project)
+  approved: true
+
+unappr_comment_on_editors_project:
+  author: editor
+  content: an unapproved comment on the editor's project.
+  commentable: editors_pub_project(Project)
+  approved: false
