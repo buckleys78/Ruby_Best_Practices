@@ -17,7 +17,9 @@ freelance:
 authors_pub_project:
   name: Project by Author not yet published
   technologies_used: Ruby, Rails, Zurb, Javascript
+  author: author
 
 editors_pub_project:
-  name: Project by Author not yet published
+  name: Project by Editor not yet published
   technologies_used: Ruby, Rails, Zurb, Javascript
+  author: editor
