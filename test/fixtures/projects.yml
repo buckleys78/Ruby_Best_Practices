@@ -1,14 +1,17 @@
 project_before_edit:
   name: Project1
   technologies_used: Ruby_on_Rails_v3
+  author: author
 
 project_after_edit:
   name: Project2
   technologies_used: Ruby_on_Rails_v4
+  author: author
 
 portfolio:
   name: How meta
   technologies_used: Ruby, Rails, Zurb, Javascript
+  author: author
 
 freelance:
   name: Barnyard Cereal

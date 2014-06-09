@@ -16,9 +16,6 @@ Rails.application.routes.draw do
 
   # Example resource route (maps HTTP verbs to controller actions automatically):
   #   resources :products
-  #resources :posts
-  # resources :projects
-  #resources :comments
 
   # Example resource route with options:
   #   resources :products do
@@ -63,6 +60,7 @@ Rails.application.routes.draw do
     resources :comments
   end
   resources :posts, concerns: :commentable
+  resources :projects, concerns: :commentable
 
   # Example resource route within a namespace:
   #   namespace :admin do

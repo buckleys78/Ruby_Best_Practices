@@ -2,6 +2,8 @@
 
 <p>Technologies used: <%= @project.technologies_used %></p>
 
+<p>Attachments: <%= image_tag @project.picture.url(:medium) %></p>
+
 <p>
   <strong>Comments:</strong>
   <table>
@@ -30,4 +32,4 @@
 <% if policy(@project).edit? %>
   <%= link_to 'Edit', edit_project_path(@project) %>
 <% end %>
-<%=link_to 'Back', projects_path%>
+<%=link_to 'Back', projects_path %>

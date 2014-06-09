@@ -1,4 +1,5 @@
 class ProjectsController < ApplicationController
+  before_action :authenticate_user!, except:[:index, :show]
   before_action :set_project, only: [:show, :edit, :update, :destroy]
 
   def index
@@ -37,6 +38,7 @@ class ProjectsController < ApplicationController
   end
 
   def destroy
+    @project.picture = nil
     @project.destroy
     respond_to do |format|
       format.html { redirect_to posts_url, notice: 'Project was successfully destroyed.' }
@@ -51,6 +53,6 @@ class ProjectsController < ApplicationController
   end
 
   def project_params
-    params.require(:project).permit(:name, :technologies_used)
+    params.require(:project).permit(:name, :technologies_used, :picture)
   end
 end

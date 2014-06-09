@@ -1,8 +1,9 @@
 require "test_helper"
 
 feature "Creating A Project" do
-  scenario "can create a new project" do
-    #given that I click on a form to create new project
+  scenario "an author can create a new project" do
+    #given that I sign in and click on a form to create new project
+    sign_in(:author)
     visit projects_path
 
     # when I fill in the form
@@ -17,8 +18,9 @@ feature "Creating A Project" do
     page.text.must_include "Rails"
   end
 
-  scenario "Invalid/incompete form submission" do
+  scenario "an invalid/incompete form can not be submitted" do
     #given that the form data is invalid,
+    sign_in(:author)
     visit new_project_path
     fill_in "Name", with: "A"
     fill_in "Technologies used", with:""
@@ -32,5 +34,18 @@ feature "Creating A Project" do
     page.text.must_include "Project could not be saved"
     page.text.must_include "Name is too short"
     page.text.must_include "Technologies used can't be blank"
+  end
+
+  scenario "a visitor cannot create or edit projects" do
+    #given that I am not signed in,
+
+    #when I visit the project index,
+    visit projects_path
+
+    #then I will not see options to edit or destroy project listings,
+    page.wont_have_link "Edit"
+    page.wont_have_link "Destroy"
+    # and I will not see options to create a new project.
+    page.wont_have_link "Create Project"
   end
 end
