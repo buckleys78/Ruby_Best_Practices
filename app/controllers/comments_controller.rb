@@ -4,13 +4,10 @@ class CommentsController < ApplicationController
   before_action :load_commentable
 
   def index
-    # @posts = policy_scope(Comment)
     @comments = policy_scope(Comment)
   end
 
   def show
-    # @comments = Comment.find(params[:id])
-    # @comment = @commentable.comments.find(comment_params)
   end
 
   def new
@@ -22,12 +19,9 @@ class CommentsController < ApplicationController
   end
 
   def edit
-    # binding.pry
-    # @comment = Comment.find(params[:id])
   end
 
   def create
-    # @comment = @post.comments.new(comment_params)
     @comment = @commentable.comments.new(comment_params)
 
     respond_to do |format|
@@ -43,7 +37,6 @@ class CommentsController < ApplicationController
   end
 
   def update
-    # @comment= @post.comments.find(params[:id])
     respond_to do |format|
       if @comment.update(comment_params)
         format.html { redirect_to post_comment_path, notice: 'Comment was successfully updated.' }
@@ -65,14 +58,12 @@ class CommentsController < ApplicationController
     end
   end
 
-  private
-  # Use callbacks to share common setup or constraints between actions.
+private
 
   def set_comment
     @comment = @commentable.comments.find(comment_params)
   end
 
-  # Never trust parameters from the scary internet, only allow the white list through.
   def comment_params
     params.require(:comment).permit(:content,
                                    (:approved if CommentPolicy.new(current_user, @comment).approve?),

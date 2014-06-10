@@ -7,7 +7,7 @@
 
 	<meta charset="UTF-8">
 
-	<title>Blusukan | Responsive App Showcase</title>
+	<title>Steve Buckley | Web Developer Skills Showcase</title>
 
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 	<meta name="description" content="">
@@ -30,14 +30,6 @@
 
 	<!-- Favicons -->
 	<link rel="icon" href="img/favicon/favicon.ico" type="image/x-icon">
-	<!-- For third-generation iPad with high-resolution Retina display: -->
-	<link rel="apple-touch-icon-precomposed" sizes="144x144" href="img/favicon/apple-touch-icon-144x144-precomposed.png">
-	<!-- For iPhone with high-resolution Retina display: -->
-	<link rel="apple-touch-icon-precomposed" sizes="114x114" href="img/favicon/apple-touch-icon-114x114-precomposed.png">
-	<!-- For first- and second-generation iPad: -->
-	<link rel="apple-touch-icon-precomposed" sizes="72x72" href="img/favicon/apple-touch-icon-72x72-precomposed.png">
-	<!-- For non-Retina iPhone, iPod Touch, and Android 2.1+ devices: -->
-	<link rel="apple-touch-icon-precomposed" href="img/favicon/apple-touch-icon-precomposed.png">
 
 	<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
 	<!--[if lt IE 9]>
@@ -52,9 +44,6 @@
 
 <body>
 
-
-
-
 	<!-- TOP BAR -->
 	<header class="masthead">
 
@@ -63,100 +52,70 @@
 			<nav class="top-bar" data-topbar>
 
 				<ul class="title-area">
-					
+
 					<!-- Title Area -->
 					<li class="name">
-						<h1><a href="./index-app.html">Blusukan</a></h1>
+						<h1><a href="./index-app.html">Portfolio</a></h1>
 					</li>
 
 					<!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
 					<li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
-						
+
 				</ul><!-- /.title-area -->
 
 				<section class="top-bar-section">
 
 					<!-- Right Nav Section -->
 					<ul class="right">
-						
+
 						<li class="divider"></li>
-						<li><a href="./index-app.html">Home</a></li>
+						<li class="active"><a href="./posts">Posts</a></li>
 						<li class="divider"></li>
-						<li><a href="./pricing-tables.html">Plans &amp; Pricing</a></li>
+						<!-- <li><a href="./projects">Example Work</a></li> -->
+						<li><%= link_to "Example Work", projects_path %></li>
 						<li class="divider"></li>
-						<li class="active"><a href="./contact.html">Contact</a></li>
+						<li class="contactMe"><%= link_to "Contact me", new_contact_path %></li>
 						<li class="divider"></li>
-						<li class="has-form"><a href="./sign-up-in.html" class="button tiny success radius">Sign In</a></li>
-							
+<!-- 						<li class="has-form"><a href="./sign-up-in.html" class="button tiny success radius">Sign In</a></li> -->
+
 					</ul><!-- /.right -->
-						
+
 				</section><!-- /.top-bar-section -->
-				
+
 			</nav><!-- /.top-bar -->
-			
+
 		</div><!-- /.row -->
-		
+
 	</header><!-- /.masthead -->
 	<!-- TOP BAR -->
 
 
 
 
-	<!-- CONTACT -->
-	<section class="contact-wrapper">
+	<!-- INTRO -->
+	<section class="intro">
 
 		<div class="row">
 
-			<div class="medium-8 small-centered columns">
+			<div class="medium-6 columns margin-top">
 
-				<h2>Contact Us</h2>
-				<h3>How can we help you?</h3>
-				<p class="margin-bottom">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</p>
-				
-			</div><!-- /.medium-12 .small-centered .columns -->
+				<!-- Start: Description -->
+				<h1>Steve Buckley</h1>
+				<p class="lead">You've landed on Steve Buckley's website.</p>
+              <p> You'll find a variety of projects I've done to demonstrate my capability in Ruby on Rails.</p>
+				<p>Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim placerat facer possim assum. Typi non habent claritatem insitam; est usus legentis in iis qui facit eorum claritatem.</p>
+				<!-- End: Description -->
+
+			</div><!-- /.medium-6 .columns -->
+
+			<div class="medium-6 columns">
+				<%=image_tag("SteveProfile.png", alt: "Steve's Image")%>
+			</div><!-- /.medium-6 .columns -->
 
 		</div><!-- /.row -->
 
-
-
-		
-		<!-- Start: Contact form-->
-		<form class="contact-form">
-
-			<div class="row">
-
-				<div class="medium-6 columns">
-
-					<textarea placeholder="Enter your message here"></textarea>
-					
-				</div><!-- /.medium-6 .columns -->
-
-				<div class="medium-6 columns">
-
-					<input type="text" placeholder="Your name">
-
-					<input type="email" placeholder="Email address">
-
-					<button type="submit" class="small radius">Send Message</button>
-					
-				</div><!-- /.medium-6 .columns -->
-
-			</div><!-- /.row -->
-
-		</form><!-- /.contact-form -->
-		<!-- End: Contact form-->
-
-
-
-
-		<!-- The element that will contain our Google Map. This is used in both the Javascript and CSS above. -->
-		<div id="map"></div>
-
-	</section><!-- /.contact-wrapper -->
-	<!-- CONTACT -->
-
-
-
+	</section><!-- /.intro -->
+	<!-- INTRO -->
 
 	<!-- PRE FOOTER -->
 	<section class="pre-footer">
@@ -167,23 +126,9 @@
 
 				<div class="col-pre-footer">
 
-					<h5>Useful Links</h5>
-
-					<ul class="side-nav">
-
-						<li><a href="#">Support</a></li>
-						<li><a href="#">Privacy Policy</a></li>
-						<li><a href="#">Terms and Conditions</a></li>
-						<li><a href="#">Unsubscribe</a></li>
-
-					</ul><!-- /.side-nav -->
-
 				</div><!-- /.col-pre-footer -->
-				
+
 			</div><!-- /.medium-4 .columns -->
-
-
-
 
 			<div class="medium-4 columns">
 
@@ -193,18 +138,15 @@
 
 					<ul class="add-links">
 
-						<li><strong><i class="fi-marker"></i> Blusukan Production Company.</strong> <br>Bandar Lampung, Lampung - Indonesia. 45698</li>
-						<li><i class="fi-telephone"></i> +62 (0721) 123 - 456</li>
-						<li><i class="fi-mail"></i> info@blusukan.com <em>or</em> support@blusukan.com</li>
-						
+						<li><strong><i class="fi-marker"></i> Steve Buckley.</strong> <br>5706 SW Admiral Way, Seattle, WA  98116</li>
+						<li><i class="fi-telephone"></i>(425)999-9634</li>
+						<li><i class="fi-mail"></i> buckleys78@gmail.com <em>or</em> steve-buckley@gerrit-tech.com</li>
+
 					</ul><!-- /.add-links -->
 
 				</div><!-- /.col-pre-footer -->
-				
+
 			</div><!-- /.medium-4 .columns -->
-
-
-
 
 			<div class="medium-4 columns">
 
@@ -218,37 +160,16 @@
 						<li><a href="#"><i class="fi-social-zurb"></i> Zurb</a></li>
 						<li><a href="#"><i class="fi-social-pinterest"></i> Pinterest</a></li>
 					</ul><!-- /.social-media -->
-					
+
 				</div><!-- /.col-pre-footer -->
-				
+
 			</div><!-- /.medium-4 .columns -->
 
 		</div><!-- /.row -->
 
 	</section><!-- /.pre-footer -->
 	<!-- PRE FOOTER -->
-
-
-
-
-	<!-- FOOTER -->
-	<footer class="footer">
-
-		<div class="row">
-
-			<div class="medium-12 columns">
-
-				<p>&copy; 2013 <a href="./index-app.html">Blusukan</a>. All right reserved. <br>Made with <i class="fi-heart"></i> in Bandar Lampung.</p>
-
-			</div><!-- /.medium-12 .columns -->
-
-		</div><!-- /.row -->
-
-	</footer><!-- /.footer -->
-	<!-- FOOTER -->
-
-	
-
+	<%= link_to 'Contact me', new_contact_path %>
 
 	<!-- Load JS here for greater good -->
 	<script src="js/jquery-1.10.2.min.js"></script>
@@ -266,9 +187,6 @@
 	<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyASm3CwaK9qtcZEWYa-iQwHaGi3gcosAJc&amp;sensor=false"></script>
 	<!-- Google Maps Script (to edit your styles, latitude and longitude for center the map) -->
 	<script src="js/maps.js"></script>
-
-
-
 
 </body>
 

@@ -1,12 +1,10 @@
 class User < ActiveRecord::Base
   after_create :set_default_role
-  # Include default devise modules. Others available are:
-  # :confirmable, :lockable, :timeoutable and
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable,
          :omniauthable
   has_many :posts, foreign_key: "author_id"
-  has_many :projects, foreign_key: "author_id"  #new
+  has_many :projects, foreign_key: "author_id"
 
   def author?
     role == 'author'
