@@ -13,17 +13,11 @@
 	<meta name="description" content="">
 	<meta name="author" content="">
 
-	<!-- Normalize CSS -->
-	<link rel="stylesheet" href="css/normalize.css">
 
-	<!-- Foundation core CSS -->
-	<link rel="stylesheet" href="css/foundation.min.css">
-
-	<!-- Foundation font icons core CSS -->
-	<link rel="stylesheet" href="css/foundation-icons.css">
-
-	<!-- Custom styles for this template -->
-	<link rel="stylesheet" href="css/main.css">
+	<%= stylesheet_link_tag 'normalize.css' %>
+	<%= stylesheet_link_tag 'foundation.min.css' %>
+	<%= stylesheet_link_tag 'foundation-icons.css' %>
+	<%= stylesheet_link_tag 'main.css' %>
 
 	<!-- Google Web Fonts CSS -->
 	<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900,100italic,300italic,400italic,700italic,900italic|Raleway:400,700|Rock+Salt">
@@ -38,12 +32,11 @@
 	<![endif]-->
 
 	<!-- Modernizr Scripts -->
-	<script src="js/modernizr-2.6.2.min.js"></script>
+	<%= javascript_include_tag "modernizr-2.6.2.min.js" %>
 
 </head>
 
 <body>
-
 	<!-- TOP BAR -->
 	<header class="masthead">
 
@@ -76,7 +69,7 @@
 						<li class="divider"></li>
 						<li class="contactMe"><%= link_to "Contact me", new_contact_path %></li>
 						<li class="divider"></li>
-<!-- 						<li class="has-form"><a href="./sign-up-in.html" class="button tiny success radius">Sign In</a></li> -->
+<!-- 					<li class="has-form"><a href="./sign-up-in.html" class="button tiny success radius">Sign In</a></li> -->
 
 					</ul><!-- /.right -->
 
@@ -102,8 +95,9 @@
 				<!-- Start: Description -->
 				<h1>Steve Buckley</h1>
 				<p class="lead">You've landed on Steve Buckley's website.</p>
-              <p> You'll find a variety of projects I've done to demonstrate my capability in Ruby on Rails.</p>
-				<p>Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim placerat facer possim assum. Typi non habent claritatem insitam; est usus legentis in iis qui facit eorum claritatem.</p>
+              	<p> You'll find a variety of projects I've done to demonstrate my capability in Ruby on Rails.</p>
+				<p>My area of specialty is business metrics, especially for manufacturing. I love to think of this as helping a company drive their business faster by giving them a bigger windshield for their race car.</p>
+				<p>More and more, these organizations have wanted these tools in web apps. So I have been striving to expand my language/skill base over the past several years. Java, Ruby on Rails, JavaScript, and CSS are at the top of the list of what I've been learning.</p>
 				<!-- End: Description -->
 
 			</div><!-- /.medium-6 .columns -->
@@ -138,9 +132,9 @@
 
 					<ul class="add-links">
 
-						<li><strong><i class="fi-marker"></i> Steve Buckley.</strong> <br>5706 SW Admiral Way, Seattle, WA  98116</li>
+						<li><strong><i class="fi-marker"></i> Steve Buckley</strong> <br>5706 SW Admiral Way, Seattle, WA  98116</li>
 						<li><i class="fi-telephone"></i>(425)999-9634</li>
-						<li><i class="fi-mail"></i> buckleys78@gmail.com <em>or</em> steve-buckley@gerrit-tech.com</li>
+						<li><i class="fi-mail"></i> buckleys78@gmail.com <br><em>or</em><br> steve-buckley@gerrit-tech.com</li>
 
 					</ul><!-- /.add-links -->
 
@@ -172,10 +166,10 @@
 	<%= link_to 'Contact me', new_contact_path %>
 
 	<!-- Load JS here for greater good -->
-	<script src="js/jquery-1.10.2.min.js"></script>
-	<script src="js/foundation.min.js"></script>
-	<script src="js/smoothscroll.js"></script>
-	<script src="js/main.js"></script>
+	<%= javascript_include_tag "jquery-1.10.2.min.js" %>
+	<%= javascript_include_tag "foundation.min.js" %>
+	<%= javascript_include_tag "smoothscroll.js" %>
+	<%= javascript_include_tag "main.js" %>
 
 	<!--
 		You need to include this script on any page that has a Google Map.
@@ -186,7 +180,7 @@
 	-->
 	<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyASm3CwaK9qtcZEWYa-iQwHaGi3gcosAJc&amp;sensor=false"></script>
 	<!-- Google Maps Script (to edit your styles, latitude and longitude for center the map) -->
-	<script src="js/maps.js"></script>
+	<%= javascript_include_tag "maps.js" %>
 
 </body>
 

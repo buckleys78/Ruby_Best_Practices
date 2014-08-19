@@ -1,6 +1,7 @@
 // START DOCUMENT
-$(document).foundation();
-
+window.onload = function() {
+	$(document).foundation();
+};
 
 
 // EFFECT ANIMATION

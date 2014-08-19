@@ -291,6 +291,7 @@ pre {
 	background-size: cover;
 	color: #fff;
 	padding-top: 3.125rem;
+	padding-left: 2rem;
 }
 	.intro h1,
 	.intro p {
@@ -671,7 +672,7 @@ body.login {
 .pre-footer {
 	background-color: #424242;
 	color: #fff;
-	padding: 1.875rem 0 2.5rem;
+	padding: 1.875rem 2rem 2.5rem;
 }
 	.pre-footer h5 {
 		color: #fff;
