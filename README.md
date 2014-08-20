@@ -4,6 +4,7 @@ By [Steve Buckley](steve.buckley@gerrit-tech.com).
 
 
 ## Description
+
 **Portfolio Design** This site is a compilation of various examples of my work, skill set, etc, as a coder and web developer.
 
 Includes
@@ -13,4 +14,6 @@ Includes
 > File attachments to Projects
 > A contact emailer to contact me.
 >
+=======
+
 
