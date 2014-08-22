@@ -15,8 +15,21 @@
 /log/*.log
 /tmp
 
+# Ignore precompiled assets
+/public/assets
+
 # Ignore the SimpleCov files.
 coverage
 
 # Ignore application configuration
 config/*.yml
+
+# OS generated files #
+######################
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
