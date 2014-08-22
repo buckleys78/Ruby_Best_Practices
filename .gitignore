@@ -22,7 +22,10 @@
 coverage
 
 # Ignore application configuration
-config/*.yml
+# Do not ignore secrets.yml as it has no 'secret' production codes, and is needed
+#   to set the secret_key_base key.
+/config/application.yml
+/config/database.yml
 
 # OS generated files #
 ######################
